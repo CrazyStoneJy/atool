@@ -38,11 +38,12 @@ program.command('verify')
     .argument('<apk file>', 'path of apk')
     .action((apkFile, options) => {
         const command = `sh ./apksigner verify --verbose --print-certs ${apkFile}`
+        console.log("🚀 ~ .action ~ verify command:", command)
         execShell(command)
             .then((res) => {
                 console.log("verify result: \n", res)
-            }).catch(() => {
-                // console.log("🚀 ~ execShell ~ error:", error)
+            }).catch((error) => {
+                console.log("🚀 ~ execShell ~ verify:", error)
             })
     })
 
