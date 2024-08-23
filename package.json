@@ -1,0 +1,41 @@
+{
+  "name": "asigner",
+  "version": "1.0.0",
+  "description": "signer tools for  android application",
+  "bin": {
+    "asinger": "./bin/cli.mjs"
+  },
+  "main": "./bin/cli.mjs",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "rm -rf ./dist && tsc -p ./tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CrazyStoneJy/atool.git"
+  },
+  "keywords": [
+    "andriod",
+    "tool",
+    "sign"
+  ],
+  "author": "crazystone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrazyStoneJy/atool/issues"
+  },
+  "homepage": "https://github.com/CrazyStoneJy/atool#readme",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/node": "^22.5.0",
+    "vitest": "^2.0.5"
+  }
+}
