@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "test": "vitest",
+    "prepublishOnly": "npm run build",
     "build": "rm -rf ./dist && tsc -p ./tsconfig.json"
   },
   "repository": {
