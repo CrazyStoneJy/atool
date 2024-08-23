@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "signer tools for  android application",
   "bin": {
-    "asinger": "./bin/cli.mjs"
+    "asigner": "./bin/cli.mjs"
   },
   "main": "./bin/cli.mjs",
   "files": [
