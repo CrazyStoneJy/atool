@@ -23,7 +23,7 @@ program.command('sign')
         const alias = options.alias
         const jks = options.jks
         const p = options.keyPass
-        const command = `sh ${__dirname}/apksigner sign --verbose --ks ${jks} --ks-pass pass:${p} --ks-key-alias ${alias} --out ${o} --in ${i}`
+        const command = `sh ../apksigner sign --verbose --ks ${jks} --ks-pass pass:${p} --ks-key-alias ${alias} --out ${o} --in ${i}`
         console.log("🚀 ~ .action ~ command:", command)
         execShell(command)
             .then((res) => {
@@ -37,7 +37,7 @@ program.command('verify')
     .description('verify apk')
     .argument('<apk file>', 'path of apk')
     .action((apkFile, options) => {
-        const command = `sh ${__dirname}/apksigner verify --verbose --print-certs ${apkFile}`
+        const command = `sh ../apksigner verify --verbose --print-certs ${apkFile}`
         console.log("🚀 ~ .action ~ verify command:", command)
         execShell(command)
             .then((res) => {
@@ -79,7 +79,7 @@ program.command('extract')
     const a = options.alias
     const k = options.keystorePass
     const p = options.keyPass
-    let command = `java -jar ${__dirname}/bundletool-all-1.17.1.jar  build-apks --bundle=${aab} --output=${o} --mode=universal --ks=${j} --ks-pass=pass:${k} --ks-key-alias=${a} --key-pass=pass:${p}`
+    let command = `java -jar ../bundletool-all-1.17.1.jar  build-apks --bundle=${aab} --output=${o} --mode=universal --ks=${j} --ks-pass=pass:${k} --ks-key-alias=${a} --key-pass=pass:${p}`
     console.log("🚀 ~ .action ~ command:", command)
     const res = await execShell(command)
     console.log("command result: \n", res + 'successfully')
