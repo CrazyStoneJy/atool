@@ -1,6 +1,6 @@
 {
   "name": "asigner",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "signer tools for  android application",
   "bin": {
     "asigner": "./bin/cli.mjs"
