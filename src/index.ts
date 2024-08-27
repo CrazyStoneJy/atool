@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { diff, execShell } from './utils';
+import { DiffResult, diff, execShell } from './utils';
 
 const program = new Command();
 
@@ -69,8 +69,8 @@ program.command('diff')
         const jksRes = await execShell(command)
         // console.log("🚀 ~ .action ~ jksRes:", jksRes)
         
-        const diffRes = diff(res, jksRes)
-        console.log("🚀 ~ diff result: ", diffRes ? 'same sha256' : 'different sha256')
+        const diffRes: DiffResult = diff(res, jksRes)
+        console.log("🚀 ~ diff result: ", diffRes.isSame ? `same sha256 ${diffRes.sha256}` : 'different sha256')
     })
 
 

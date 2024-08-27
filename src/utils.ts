@@ -11,13 +11,20 @@ async function execShell(shell: string): Promise<string> {
     });
 }
 
+export interface DiffResult {
+    isSame: boolean
+    sha256: string
+}
 
-function diff(apkSign: string, jksCert: string): boolean {
+function diff(apkSign: string, jksCert: string): DiffResult {
     // console.log("🚀 ~ diff ~ apkCert:", apkSign)
     // console.log("🚀 ~ diff ~ jksCert:", jksCert)
     const apkSignSha256 = getSha256FromApkSign(apkSign)
     const sha256 = getSHA256FromJksCert(jksCert)
-    return apkSignSha256 === sha256
+    return {
+        isSame: apkSignSha256 === sha256,
+        sha256
+    }
 }
 
 function getSha256FromApkSign(apkSign: string): string {
