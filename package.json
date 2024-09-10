@@ -1,6 +1,6 @@
 {
   "name": "asigner",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "signer tools for  android application",
   "bin": {
     "asigner": "./bin/cli.mjs"
@@ -8,7 +8,10 @@
   "main": "./bin/cli.mjs",
   "files": [
     "bin",
-    "dist"
+    "dist",
+    "bundletool-all-1.17.1.jar",
+    "apksigner.jar",
+    "apksigner"
   ],
   "scripts": {
     "test": "vitest",
